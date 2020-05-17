@@ -39,9 +39,7 @@ def createWallNode(kwargs):
     parm_folder.addParmTemplate(hou.StringParmTemplate("i_wallDetail"+ str(node.parm("IDCount").eval()), "Input Wall Detail"+ str(node.parm("IDCount").eval()), 1, naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.NodeReference, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal))
     expression = 'chsop("../../'+'i_wallDetail'+ str(node.parm("IDCount").eval())+'")' 
     thisWallNode.parm("i_WallDetailsGeo").setExpression(expression) 
-    
-    #"../../"+
-    
+        
     parm_folder.addParmTemplate(hou.StringParmTemplate("i_wallCutGeo"+ str(node.parm("IDCount").eval()), "Input Wall Cut Geo"+ str(node.parm("IDCount").eval()), 1, disable_when ="{ mode"+ str(node.parm("IDCount").eval())+" == 3 }", default_value=([""]), naming_scheme=hou.parmNamingScheme.Base1, string_type=hou.stringParmType.NodeReference, menu_items=([]), menu_labels=([]), icon_names=([]), item_generator_script="", item_generator_script_language=hou.scriptLanguage.Python, menu_type=hou.menuType.Normal))
     expression = 'chsop("../../'+'i_wallCutGeo'+ str(node.parm("IDCount").eval())+'")' 
     #expression = 'if(opexist(chs("'+str(node.path())+'/i_wallCutGeo'+ str(node.parm("IDCount").eval())+'")),'+'chs("'+str(node.path())+'/i_wallCutGeo'+ str(node.parm("IDCount").eval())+',"../Placeholder")'
@@ -54,7 +52,6 @@ def createWallNode(kwargs):
     thisWallNode.parm("i_AltGeo").setExpression(expression) 
     
     
-    ##
     parm_folder.addParmTemplate(hou.FloatParmTemplate("widthInputSeg" + str(node.parm("IDCount").eval()), "Width of Input Segment", 1, default_value = (8,0,0),  disable_when ="{ mode"+ str(node.parm("IDCount").eval())+" == 3 }"))
     expression = 'chs("'+str(node.path())+'/widthInputSeg'+ str(node.parm("IDCount").eval())+'")'
     thisWallNode.parm("widthOfPart").setExpression(expression) 
@@ -91,11 +88,9 @@ def createWallNode(kwargs):
     thisWallNode.parm("invertAlignment").setExpression(expression) 
     
     
-    
     parm_folder.addParmTemplate(hou.FloatParmTemplate("offset" + str(node.parm("IDCount").eval()), "Offset", 1, disable_when ="{ mode"+ str(node.parm("IDCount").eval())+" != 2 }"))
     expression = 'chs("'+str(node.path())+'/offset'+ str(node.parm("IDCount").eval())+'")'
     thisWallNode.parm("offset").setExpression(expression) 
-    
     
     
     parm_folder.addParmTemplate(hou.FloatParmTemplate("offsetSingleFromEdge" + str(node.parm("IDCount").eval()), "Offset", 1, disable_when ="{ mode"+ str(node.parm("IDCount").eval())+" != 1 }"))
