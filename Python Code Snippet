@@ -1,3 +1,6 @@
+'''
+Create new geo nodes by material 
+'''
 import hou
 previous_selection = hou.selectedNodes()
 valuesList = []
