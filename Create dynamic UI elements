@@ -1,4 +1,3 @@
-```
 wallIdNamesList = ["apple", "banana", "cherry"]
 
 def createWallNode(kwargs):
@@ -195,6 +194,6 @@ def removeWallID(insideNode, parmGroupName, folderName, kwargs):
     #setting the template
     node.setParmTemplateGroup(null_tg)
 
-```
+
     
     
