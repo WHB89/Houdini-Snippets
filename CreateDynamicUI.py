@@ -1,4 +1,9 @@
+# als callback-script: hou.phm().createWallNode(kwargs)
+
+
 wallIdNamesList = ["apple", "banana", "cherry"]
+
+
 
 def createWallNode(kwargs):
     node = hou.pwd()
